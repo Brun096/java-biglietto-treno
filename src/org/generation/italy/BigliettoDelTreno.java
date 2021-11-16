@@ -19,18 +19,19 @@ public class BigliettoDelTreno {
 		System.out.print("Età: ");
 		age=scanner.nextInt();
 		
-		double priceKm=price*kmDistance;
-		double discountOver65=(priceKm*60)/100.00;
-		double discountTeen=(priceKm*80)/100.00;
+		double priceKm;
+		
 		
 		//condizioni
 		if(age<18) {
-			System.out.print("Il prezzo è di "+ discountTeen+" €");
+			priceKm=((kmDistance*price)*80)/100;
 		}else if(age>65) {
-			System.out.print("Il prezzo è di "+ discountOver65+" €");
+			priceKm=((kmDistance*price)*60)/100;
 		}else {
-			System.out.print("Il prezzo è di "+ priceKm+" €");
+			priceKm=kmDistance*price;
 		}
+		
+		System.out.print("Il prezzo è di "+priceKm+" €");
 		scanner.close();
 	}
 
